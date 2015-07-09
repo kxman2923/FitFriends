@@ -1,0 +1,47 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00B7FF;
+}
+
+.invite-message{
+  size:20px;
+  margin-bottom:10px;
+}
+
+.invite-success{
+  color:#16a085;
+}
+
+.btn-link{
+	color:#00B7FF;
+}
+.error, .form-error{
+  padding:10px;
+  color:#E4717A;
+}
+
+href.btn:hover{
+	color:#16a085;
+}
+
+#create-group-form .form-group input, #create-fitfix-form .form-group input,
+#create-fitfix-form .form-group select{
+ width: 60%; 
+ margin-right:10px;
+ float:right;
+}
+
+#create-group-form .form-group, #create-fitfix-form .form-group{
+  width: 100%;
+  margin:10px;
+  text-align:left;
+}
+
+.axis {
+  font-size: 10px;
+}
+

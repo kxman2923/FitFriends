@@ -1,0 +1,138 @@
+<div id="feed">
+  <div class = "page-header">
+    <h1> {{currentUser.local.username}}'s FitFeed </h1>
+  </div>
+</div>
+  <div class="error">
+    {{#if error}}
+      {{error}}
+    {{/if}}
+  </div>
+
+ <!-- Form for creating new Group -->
+  <button class="btn btn-lg" data-toggle="modal" data-target="#new-group-modal" id="create-group-modal-btn">
+    Create New Group
+  </button>
+  <!-- Modal -->
+  <div class="modal fade" id="new-group-modal" tabindex="-1" role="dialog" aria-labelledby="new-group-modal-label" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content"> 
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">
+            <span aria-hidden="true">&times;</span><span class="sr-only">Close</span>
+          </button>
+          <h3 class="modal-title" id="new-group-modal-label">Create a New Group!</h3>
+        </div>
+        <div class="modal-body">
+            <div class="form-error">
+              {{#if form-error}}
+                {{form-error}}
+              {{/if}}
+            </div>
+            <form id="create-group-form" class="form-inline">
+              <div class="form-group">
+                <label for="new-group-name">Group Name</label>
+                <input type="text" name="name" id="new-group-name" class="form-control" placeholder="Your group's name" required />
+              </div>
+              <div class="form-group">
+                <label for="new-group-description">Description</label>
+                <input type="text" name="description" id="new-group-description" class="form-control" placeholder="A short description of your group" required />
+              </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+        <button type="button" class="btn" data-dismiss="modal">Close</button>
+          <button type="button" class="btn edit-btn" id="create-group-btn">Create!</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+<!-- Form for creating new FitFix -->
+ <button class="btn btn-lg" data-toggle="modal" data-target="#new-fitfix-modal" id="create-fitfix-modal-btn">
+    Create New FitFix
+  </button>
+  <!-- Modal -->
+  <div class="modal fade" id="new-fitfix-modal" tabindex="-1" role="dialog" aria-labelledby="new-fitfix-modal-label" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">
+            <span aria-hidden="true">&times;</span><span class="sr-only">Close</span>
+          </button>
+          <h3 class="modal-title" id="new-fitfix-modal-label">Create a New FitFix!</h3>
+        </div>
+        <div class="modal-body">
+            <div class="form-error">
+              {{#if form-error}}
+                {{form-error}}
+              {{/if}}
+            </div>
+            <form id="create-fitfix-form" class="form-inline">
+              <div class="form-group">
+                <label for="new-fitfix-title">FitFix Title</label>
+                <input type="text" name="title" id="new-fitfix-title" class="form-control" placeholder="Your FitFix's title" required />
+              </div>
+              <div class="form-group">
+                <label for="new-fitfix-description">Description</label>
+                <input type="text" name="description" id="new-fitfix-description" class="form-control" placeholder="A short description of your fitfix" required />
+              </div>
+              <div class="form-group">
+                <label for="new-fitfix-startdate">Date and Time</label>
+                <input type="datetime-local" name="startDate" id="new-fitfix-startDate" class="form-control" placeholder="When will the FitFix happen?" required />
+              </div>
+              <div class="form-group">
+                <label for="new-fitfix-duration">Duration</label>
+                <input type="number" name="duration" id="new-fitfix-duration" class="form-control" placeholder="How long will the FitFix be? (in hours)" required />
+              </div>
+              <div class="form-group">
+                <label for="new-fitfix-location">Location</label>
+                <input type="text" name="location" id="new-fitfix-location" class="form-control" placeholder="Your FitFix's location" required />
+              </div>
+              <div class="form-group">
+                <label for="new-fitfix-type">Fitness Type</label>
+                <select name="type" id="new-fitfix-type" class="form-control"required>
+                  <option value="Running">Running</option>
+                  <option value="Swimming"> Swimming </option>
+                  <option value="Yoga"> Yoga </option>
+                  <option value="GroupExercise"> Group Exercise </option>
+                  <option value="RaquetSports"> Raquet Sports </option>
+                  <option value="TeamSports"> Team Sports </option>
+                  <option value="Strength"> Strength </option>
+                  <option value = "Cardio"> Cardio </option>
+                  <option value="Other">Other</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="new-fitfix-recurring">Weekly Events</label>
+                <input type="number" name="recurring" id="new-fitfix-recurring" class="form-control"
+                placeholder="Number of weeks recurring" min="1" max="52" value="1" required />
+              </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+        <button type="button" class="btn" data-dismiss="modal">Close</button>
+          <button type="button"class="btn edit-btn" id="create-fitfix-btn">Create!</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class = "row" id = changing-fitfixes>
+  <div class = "col-xs-8 panel panel-feed" id= "fitfix-item">
+  <div class= "panel-body">
+  <h3> Upcoming FitFixes </h3>
+    {{#each fitfix}}
+      {{> fitfix-preview}}
+    {{/each}}
+  </div>
+  </div>
+  <div class = "col-xs-4 panel panel-feed" id = "fitfix-rec">
+  <div class = "panel-body">
+  <h3> Recommended FitFixes </h3>
+    {{#each recommendations}}
+      {{> fitfix-preview}}
+    {{/each}}
+  </div>
+  </div>
+  </div>
+  </div>

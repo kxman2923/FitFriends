@@ -1,0 +1,77 @@
+    <!-- AddThisEvent -->
+    <script type="text/javascript" src="https://addthisevent.com/libs/1.5.8/ate.min.js"></script>
+        <!-- AddThisEvent Settings -->
+    <script type="text/javascript">
+    addthisevent.settings({
+        mouse     : false,
+        css       : false,
+        outlook   : {show:true, text:"Outlook Calendar"},
+        google    : {show:true, text:"Google Calendar"},
+        ical      : {show:true, text:"iCal Calendar"},
+        dropdown  : {order:"outlook,google,ical"}
+    });
+    </script>
+<div class = "container" id="userPage" data-user-id ={{currentUser._id}}>
+	<div class = "page-header">
+		<h1> Welcome {{currentUser.local.username}} </h1>
+	</div>
+	<div class = row>
+	<div class = "col-sm-4" id = "fitfixes-attending">
+	<h2> Your FitFixes </h2>
+		{{#each fitfixes}}
+			<h4> {{title}} </h4>
+			<h5> {{formatDate}} </h5>
+			<a href="http://example.com/link-to-your-event" title="Add to Calendar" class="addthisevent">
+			    Add to Calendar
+			    <span class="_summary">{{title}}</span>
+			    <span class="_start">{{startDate}}</span>
+			    <span class="_end">{{endDate}}</span>
+			    <span class="_zonecode">15</span>
+			    <span class="_description">{{description}}</span>
+			    <span class="_location">{{location}}</span>
+			    <span class="_date_format">DD/MM/YYYY</span>
+			</a>
+		{{/each}}
+	</div>
+
+	<div class = "col-sm-4" id='user-groups'>
+	<h2> Your Groups </h2>
+		{{#each groups}}
+			<href class="btn group-button" id={{_id}}>{{name}}</href>
+			
+		{{/each}}
+	</div>
+
+	<div class = "col-sm-4" id = "user-invites">
+	<h2> Pending Invites </h2>
+        <h3> Fit Fixes </h3>
+        {{#each fitFixInvites}}
+        <div class="fitfixInvite-preview" data-fitfix-id={{_id}}>
+        	<h5>{{title}}</h5>
+        	<button class='btn commit-btn' id={{_id}}> Commit! </button>
+        </div>
+        {{/each}}
+        
+        <h3> Groups </h3>
+        {{#each groupInvites}}
+        	<div class="groupInvite-preview" data-group-id={{_id}}>
+				<h5>{{name}}</h5>
+        		<button class='btn join-btn' id={{_id}}> Join! </button>
+			</div>
+        {{/each}}
+	</div>
+</div>
+<div class = "row">
+<h2 class= "text-center"> In the past month... </h2>
+<div class = "col-sm-6">
+<h3> you have committed to these types of FitFixes</h3>
+<svg id="stats-visual-type" width="500" height="250"></svg>
+</div>
+<div class = "col-sm-6">
+<h3> you have committed to Fitfixes on these days </h3>
+<svg id="stats-visual-time" width="500" height="250"></svg>
+</div>
+</div>
+<br>
+</div>
+</div>

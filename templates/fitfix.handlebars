@@ -1,0 +1,37 @@
+
+<div id = "fitfix" class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">{{fitfix.type}}</h3>
+  </div>
+  <div class="panel-body">
+  	<div>
+    {{fitfix.description}}
+    </div>
+    <div>
+    {{fitfix.location}}
+    </div>
+    <div>
+    {{fitfix.startDate}}
+    </div>
+    <div>
+    {{fitfix.duration}}
+    </div>
+  </div>
+<div id="fitfix-">
+  <h2 id="fitfix-title">FitFix</h2>
+  <div class="error">
+    {{#if error}}
+      {{error}}
+    {{/if}}
+  </div>
+	<div id="invite-fitfix-container">
+		<form id="invite-fitfix-form" data-fitfix-id={{_id}}>
+			<h3>Invite Users to This FitFix!</h3>
+			<div class="invite-message"></div>
+			<div class="form-group">
+				<input type="text" name="username" class="form-control" placeholder="Your friend's username" id="invite-username" required />
+				<button type="submit" class="btn" id="invite-user-btn">Invite</button>
+			</div>
+		</form>  
+	</div>
+</div>

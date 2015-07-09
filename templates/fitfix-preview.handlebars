@@ -1,0 +1,44 @@
+<div class="fitfix-preview panel panel-primary" data-fitfix-id={{_id}}>
+<div class="panel-heading">
+  <h1 class="panel-title"> {{title}}</h1>
+</div>
+<div class = "panel-body">
+<h5>{{description}}</h5>
+<h5>Location: {{location}}</h5>
+<h5>Time: {{startDate}}</h5> 
+<h5>Duration: {{duration}} hours</h5> 
+<h5>Type: {{type}}</h5>
+ 
+
+{{#if isAuthor}}
+  <span>You made this event</span><br>
+{{/if}}
+
+{{#if notCommitted}}
+  <button class='btn commit-btn' id={{_id}}> Commit! </button>
+  {{else}}
+  <span>You committed to this event.</span>  
+{{/if}}
+
+
+  <div id="invite-fitfix-container">
+    <form id="invite-fitfix-form" data-fitfix-id={{_id}}>
+      <h4>Invite Users to This FitFix!</h4>
+      <div class="invite-message"></div>
+      <div class="form-group">
+        <input type="text" name="username" class="form-control input-sm" placeholder="Your friend's username" id="invite-username" required /></div>
+        <button type="submit" class="btn btn-sm" id="invite-user-btn">Invite User</button>
+      
+    </form>
+
+    <form id="inviteg-fitfix-form" data-fitfix-id={{_id}}>
+      <h4>Invite Groups to This FitFix!</h4>
+      <div class="invite-message"></div>
+      <div class="form-group">
+        <input type="text" name="group" class="form-control input-sm" placeholder="Group Name" id="invite-group" required /></div>
+        <button type="submit" class="btn btn-sm" id="invite-group-btn">Invite Group</button>
+      
+    </form> 
+  </div>
+</div>
+</div>

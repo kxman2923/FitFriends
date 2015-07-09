@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel="stylesheet" href="/stylesheets/bootstrap.min.css">
+    <script src='http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'></script>
+    <script src="/js/handlebars.runtime.js"></script>
+    <script src='//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js'></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.8.3/moment.min.js"></script>
+    <script src="/js/helpers.js"></script>
+    <script src="http://d3js.org/d3.v3.js"></script>
+    <script src="/js/templates.js"></script>
+    <script src="/js/users.js"></script>
+    <script src="/js/index.js"></script>
+    <!-- AddThisEvent -->
+    <script type="text/javascript" src="https://addthisevent.com/libs/1.5.8/ate.min.js"></script>
+        <!-- AddThisEvent Settings -->
+    <script type="text/javascript">
+    addthisevent.settings({
+        mouse     : false,
+        css       : false,
+        outlook   : {show:true, text:"Outlook Calendar"},
+        google    : {show:true, text:"Google Calendar"},
+        ical      : {show:true, text:"iCal Calendar"},
+        dropdown  : {order:"outlook,google,ical"}
+    });
+    </script>
+  </head> 
+<body>
+
+<div class="container">
+    <div id="nav" class = "navbar navbar-default navbar-fixed-top" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <a class="navbar-brand" id = "logo" href="#">FitFriends</a>
+            </div>
+<!--             %console.log(currentUser)%
+            %if (currentUser.loggedIn) { % -->
+            <div class="collapse navbar-collapse" id= "logged-in-nav">
+<!--                "<div id ='nav-items' <ul class='navbar-nav nav'> 
+                <ul class='nav navbar-nav navbar-right'>
+                <li><a href='#' id = 'profile-button'>Profile</a></li>
+                <li><a href='#' id = 'search-button'>Search FitFixes</a></li>
+                <li><a href='#' id='logout-link'>Logout</a></li></ul>
+                <li class='dropdown'>
+                <a href='#' class='dropdown-toggle' data-toggle='dropdown' role='button' aria-expanded='false'> Groups 
+                <span class='caret'></span></a>
+                <ul class='dropdown-menu' id = 'groups-dropdown' role='menu'> </ul>
+                </li>
+                </ul></div>
+                %}% -->
+            </div>
+        </div>
+    </div>
+
+    <div id= "main-container">
+    </div>
+
+    <div id="footer" class = "navbar navbar-default navbar-fixed-bottom">
+        <div class="container-fluid">
+            <p class="navbar-text navbar-right">
+                Made by
+                <a href="https://github.com/laureneclark">
+                    Lauren Clark
+                </a>
+                ,
+                <a href="https://github.com/emmachristie">
+                    Emma Christie
+                </a>
+                , and 
+                <a href="https://github.com/kxman2923">
+                    Kharis Xavier
+                </a>
+                for
+                <a href="https://stellar.mit.edu/S/course/6/fa14/6.170/courseMaterial/topics/topic2/project/text3/text">
+                    6.170
+                </a>
+                .
+            </p>
+        </div>
+    </div>
+
+  </div>
+</body>
+</html>

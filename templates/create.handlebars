@@ -1,0 +1,37 @@
+<div id="create">
+  <h3>Create a FitFix</h1>
+  <div class="error">
+    {{#if error}}
+      {{error}}
+    {{/if}}
+  </div>
+  <div id="create-fields">
+    <div id = "nameInput" class = "input-group">
+      <span class="input-group-addon"> FitFix Name </span>
+      <input type="text" id="fitfixName" class="form-control" placeholder="FitFix Name" required />
+    </div>
+    <div id = "descriptionInput" class = "input-group">
+      <span class="input-group-addon"> Description </span>
+      <input type="text" name="description" class="form-control" placeholder="Describe your FitFix" required />
+    </div>
+    <div id = "locationInput" class = "input-group">
+      <span class="input-group-addon"> Location to Meet </span>
+      <input type="text" name="location" class="form-control" placeholder="Location to meet for the FitFix" required />
+    </div>
+    <div id = "startTimeInput" class = "input-group">
+      <span class="input-group-addon"> Start Time </span>
+      <div class="input-append bootstrap-timepicker">
+        <input type="text" name="startTime" class="input-small" required />
+      </div>
+    </div>
+    <div id = "endTimeInput" class = "input-group">
+      <span class="input-group-addon"> End Time </span>
+      <div class="input-append bootstrap-timepicker">
+        <input type="text" name="endTime" class="input-small" required />
+      </div>
+    </div>
+    <div id = "recurringInput" class = "input-group">
+      <span class="input-group-addon"> Recurring Event </span>
+      <input type="checkbox" name="recurring" class="form-control">
+    </div>
+</div>
